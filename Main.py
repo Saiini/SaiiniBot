@@ -3,13 +3,13 @@ extensions = [
     "Cogs.Fun.gift",
     "Cogs.Fun.time",
     "Cogs.Fun.ping",
-    "Cogs.Fun.github",
     "Cogs.Fun.boop",
     "Cogs.help",
     "Cogs.Fun.hug",
     "Cogs.Fun.curl",
     "Cogs.Fun.button",
-    "Cogs.Fun.clippy"
+    "Cogs.Fun.clippy",
+    "Cogs.Admin"
 ]
 bot = commands.Bot(command_prefix="$", case_insensitive=False)
 bot.remove_command('help')

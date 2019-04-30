@@ -12,7 +12,7 @@ class clippy(commands.Cog):
     async def clippy(self, ctx, *, text : str = None):
         if text == None:
             return
-        width = 40.2
+        width = 38
         newtext = textwrap.fill(text, width)
         image = Image.open('asset/clippy.jpg')
         font = ImageFont.truetype('asset/clippy.ttf', 12)
@@ -37,5 +37,18 @@ class clippy(commands.Cog):
         image.save('asset/clippyoptionnew.jpg')
         await ctx.send(file=discord.File(fp='asset/clippyoptionnew.jpg'))
         os.remove('asset/clippyoptionnew.jpg')
+    @commands.command()
+    async def clippyok(self, ctx, *, text : str = None):
+        if text == None:
+            return
+        width = 36
+        newtext = textwrap.fill(text, width)
+        image = Image.open('asset/clippy_ok.jpg')
+        font = ImageFont.truetype('asset/clippy.ttf', 29)
+        draw = ImageDraw.Draw(image)
+        draw.text(xy=(34, 45), text=newtext, fill='rgb(0,0,0)', font=font)
+        image.save('asset/clippyoknew.jpg')
+        await ctx.send(file=discord.File(fp='asset/clippyoknew.jpg'))
+        os.remove('asset/clippyoknew.jpg')
 def setup(bot):
     bot.add_cog(clippy(bot))
