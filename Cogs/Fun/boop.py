@@ -5,7 +5,7 @@ class boop(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
     @commands.command()
-    async def boop(self, ctx, member : str = None):
+    async def boop(self, ctx, *, member : str = None):
         if member == None:
             NothingArray = [
                 "You attempt to boop no ones nose... turns out... it was ineffective...",

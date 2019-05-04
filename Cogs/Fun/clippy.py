@@ -5,25 +5,40 @@ from discord.ext import commands
 import discord
 import os
 import textwrap
+import random
 class clippy(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
     @commands.command()
     async def clippy(self, ctx, *, text : str = None):
         if text == None:
+            NothingArray = [
+                "Clippy says: *Please provide some text!*",
+                "Clippy says: *Input some arguments!*",
+                "Input some text for clippy!",
+                "Please provide text for clippy!"
+            ]
+            await ctx.send(random.choice(NothingArray))
             return
-        width = 38
+        width = 40
         newtext = textwrap.fill(text, width)
         image = Image.open('asset/clippy.jpg')
         font = ImageFont.truetype('asset/clippy.ttf', 12)
         draw = ImageDraw.Draw(image)
-        draw.text(xy=(12, 12), text=newtext, fill='rgb(0,0,0)' ,font=font)
+        draw.text(xy=(12, 12), text=newtext, fill='rgb(0,0,0)', font=font)
         image.save('asset/clippynew.jpg')
         await ctx.send(file=discord.File(fp='asset/clippynew.jpg'))
         os.remove('asset/clippynew.jpg')
     @commands.command()
     async def clippyoption(self, ctx, *, text : str = None):
         if text == None:
+            NothingArray = [
+                "Clippy says: *Please provide some text!*",
+                "Clippy says: *Input some arguments!*",
+                "Input some text for clippy!",
+                "Please provide text for clippy!"
+            ]
+            await ctx.send(random.choice(NothingArray))
             return
         width = 20
         if len(text) > 100:
@@ -40,6 +55,13 @@ class clippy(commands.Cog):
     @commands.command()
     async def clippyok(self, ctx, *, text : str = None):
         if text == None:
+            NothingArray = [
+                "Clippy says: *Please provide some text!*",
+                "Clippy says: *Input some arguments!*",
+                "Input some text for clippy!",
+                "Please provide text for clippy!"
+            ]
+            await ctx.send(random.choice(NothingArray))
             return
         width = 36
         newtext = textwrap.fill(text, width)
