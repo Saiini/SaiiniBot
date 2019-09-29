@@ -1,14 +1,18 @@
-from PIL import Image
-from PIL import ImageFont
-from PIL import ImageDraw
-from discord.ext import commands
-import discord
 import os
-import textwrap
 import random
+import textwrap
+
+import discord
+from PIL import Image
+from PIL import ImageDraw
+from PIL import ImageFont
+from discord.ext import commands
+
+
 class clippy(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+
     @commands.command()
     async def clippy(self, ctx, *, text : str = None):
         if text == None:
@@ -29,6 +33,7 @@ class clippy(commands.Cog):
         image.save('asset/clippynew.jpg')
         await ctx.send(file=discord.File(fp='asset/clippynew.jpg'))
         os.remove('asset/clippynew.jpg')
+
     @commands.command()
     async def clippyoption(self, ctx, *, text : str = None):
         if text == None:
@@ -52,6 +57,7 @@ class clippy(commands.Cog):
         image.save('asset/clippyoptionnew.jpg')
         await ctx.send(file=discord.File(fp='asset/clippyoptionnew.jpg'))
         os.remove('asset/clippyoptionnew.jpg')
+
     @commands.command()
     async def clippyok(self, ctx, *, text : str = None):
         if text == None:
@@ -72,5 +78,7 @@ class clippy(commands.Cog):
         image.save('asset/clippyoknew.jpg')
         await ctx.send(file=discord.File(fp='asset/clippyoknew.jpg'))
         os.remove('asset/clippyoknew.jpg')
+
+
 def setup(bot):
     bot.add_cog(clippy(bot))

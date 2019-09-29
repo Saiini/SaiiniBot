@@ -1,11 +1,11 @@
-from discord.ext import commands
 import discord
-from datetime import datetime
-import os
-import sys
+from discord.ext import commands
+
+
 class help(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+
     @commands.command(name = "help")
     async def help(self, ctx):
         embed = discord.Embed(title="Fun", description="", color=discord.Color.dark_red())
@@ -18,5 +18,7 @@ class help(commands.Cog):
         embed2.add_field(name="kick", value="└─``Kicks a user``", inline=True)
         await ctx.author.send(embed=embed)
         await ctx.author.send(embed=embed2)
+
+
 def setup(bot):
     bot.add_cog(help(bot))

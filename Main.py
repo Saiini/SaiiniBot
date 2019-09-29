@@ -7,9 +7,7 @@ extensions = [
     "Cogs.help",
     "Cogs.Fun.hug",
     "Cogs.Fun.button",
-    "Cogs.Fun.clippy",
     "Cogs.Admin",
-    "Cogs.Fun.Music.Music",
     "Cogs.Util.wikipedia"
 ]
 bot = commands.Bot(command_prefix="$", case_insensitive=False)

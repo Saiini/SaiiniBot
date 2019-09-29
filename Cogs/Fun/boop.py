@@ -1,9 +1,12 @@
-import discord
-from discord.ext import commands
 import random
+
+from discord.ext import commands
+
+
 class boop(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+
     @commands.command()
     async def boop(self, ctx, *, member : str = None):
         if member == None:
@@ -23,5 +26,7 @@ class boop(commands.Cog):
             f"You boop {member}'s nose till they get tired of it ^-^",
         ]
         await ctx.send(random.choice(Boop))
+
+
 def setup(bot):
     bot.add_cog(boop(bot))

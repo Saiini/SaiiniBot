@@ -1,9 +1,12 @@
-import discord
-from discord.ext import commands
 import random
+
+from discord.ext import commands
+
+
 class hug(commands.Cog):
     def __int__(self, bot):
         self.bot = bot
+
     @commands.command(pass_context=True)
     async def hug(self, ctx, user : str = None):
         if user == None:
@@ -28,5 +31,7 @@ class hug(commands.Cog):
             f"{user} thanks you for the hug!"
         ]
         await ctx.send(random.choice(Hug))
+
+
 def setup(bot):
     bot.add_cog(hug(bot))

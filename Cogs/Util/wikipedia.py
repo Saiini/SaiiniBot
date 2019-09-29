@@ -1,11 +1,15 @@
-import wikipedia
-import discord
-from discord.ext import commands
 import random
 import textwrap
+
+import discord
+import wikipedia
+from discord.ext import commands
+
+
 class wiki(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+
     @commands.command()
     async def wikipedia(self, ctx, *, query : str = None):
         if query == None:
@@ -27,5 +31,7 @@ class wiki(commands.Cog):
         embed = discord.Embed(title="Wikipedia", color=0xCD6735, url=f"https://en.wikipedia.org/wiki/Main_Page")
         embed.add_field(name=f"Search results for **{query.capitalize()}**", value=shorten[0])
         await ctx.send(embed=embed)
+
+
 def setup(bot):
     bot.add_cog(wiki(bot))

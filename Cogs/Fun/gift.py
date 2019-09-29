@@ -1,10 +1,14 @@
-import discord
-from discord.ext import commands
 import datetime
 import random
+
+import discord
+from discord.ext import commands
+
+
 class gift(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+
     @commands.command(aliases = [
         "present",
         "give-present",
@@ -27,5 +31,7 @@ class gift(commands.Cog):
                 "hey! keep your kindness for christmas! \n -santa"
             ]
             await ctx.send(random.choice(NotChristmas))
+
+
 def setup(bot):
     bot.add_cog(gift(bot))
