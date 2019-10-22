@@ -1,2 +1,0 @@
-TODO:
-finish the no permissions error handeling for Admin.py

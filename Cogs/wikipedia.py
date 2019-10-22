@@ -13,14 +13,14 @@ class wiki(commands.Cog):
     @commands.command()
     async def wikipedia(self, ctx, *, query : str = None):
         if query == None:
-            NothingArray = [
+            NothingList = [
                 "I searched up **Nothing** and **Nothing** Popped up!",
                 "Please input something for me to search!",
                 "Wikipedia didnt like that!",
                 "Wikipedia says: Input something",
                 "Wikipedia doesn't like that",
             ]
-            await ctx.send(random.choice(NothingArray))
+            await ctx.send(random.choice(NothingList))
             return
         try:
             search = wikipedia.page(query)
@@ -31,7 +31,6 @@ class wiki(commands.Cog):
         embed = discord.Embed(title="Wikipedia", color=0xCD6735, url=f"https://en.wikipedia.org/wiki/Main_Page")
         embed.add_field(name=f"Search results for **{query.capitalize()}**", value=shorten[0])
         await ctx.send(embed=embed)
-
 
 def setup(bot):
     bot.add_cog(wiki(bot))

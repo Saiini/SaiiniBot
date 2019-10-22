@@ -18,15 +18,13 @@ class boop(commands.Cog):
             ]
             await ctx.send(random.choice(NothingArray))
             return
+
         Boop = [
-            f"You boop {member}!",
-            f"booop! {member}",
-            f"You boop {member}'s nose ^-^",
+            f"You boop {member}'s snoot",
             f"You get booped back, ***AGGRESSIVELY***",
-            f"You boop {member}'s nose till they get tired of it ^-^",
+            f"You boop {member}'s nose ",
         ]
         await ctx.send(random.choice(Boop))
-
 
 def setup(bot):
     bot.add_cog(boop(bot))

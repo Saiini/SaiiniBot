@@ -24,6 +24,7 @@ class gift(commands.Cog):
                 f"{member.display_name} is filled with joy thanks to your kindness",
             ]
             await ctx.send(random.choice(Gift))
+
         if datetime.datetime.today().month != 12:
             NotChristmas = [
                 "It is not christmas!",
@@ -31,7 +32,6 @@ class gift(commands.Cog):
                 "hey! keep your kindness for christmas! \n -santa"
             ]
             await ctx.send(random.choice(NotChristmas))
-
 
 def setup(bot):
     bot.add_cog(gift(bot))

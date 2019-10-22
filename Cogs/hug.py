@@ -10,7 +10,7 @@ class hug(commands.Cog):
     @commands.command(pass_context=True)
     async def hug(self, ctx, user : str = None):
         if user == None:
-            NothingArray = [
+            NothingList = [
                 "You hug Nothing",
                 "You hug the air",
                 "Try hugging a user",
@@ -20,8 +20,9 @@ class hug(commands.Cog):
                 "Stop hugging the air ffs",
                 "Why dont you wanna hug someone?"
             ]
-            await ctx.send(random.choice(NothingArray))
+            await ctx.send(random.choice(NothingList))
             return
+
         Hug = [
             f"You hug {user}",
             f"You squeeze {user} very tightly ^-^",
@@ -31,7 +32,6 @@ class hug(commands.Cog):
             f"{user} thanks you for the hug!"
         ]
         await ctx.send(random.choice(Hug))
-
 
 def setup(bot):
     bot.add_cog(hug(bot))

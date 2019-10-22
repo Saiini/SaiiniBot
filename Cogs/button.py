@@ -16,12 +16,12 @@ class button(commands.Cog):
     @commands.command()
     async def button(self, ctx, *, txt : str = None):
         if txt == None:
-            NothingArray = [
+            NothingList = [
                 "Input an argument you tard",
                 "Please input something!",
                 "no"
             ]
-            await ctx.send(random.choice(button))
+            await ctx.send(random.choice(NothingList))
             return
         width = 8
         image = Image.open('asset/btn.jpg')
@@ -32,7 +32,6 @@ class button(commands.Cog):
         image.save('asset/btn-new.jpg')
         await ctx.send(file=discord.File(fp='asset/btn-new.jpg'))
         os.remove('asset/btn-new.jpg')
-
 
 def setup(bot):
     bot.add_cog(button(bot))

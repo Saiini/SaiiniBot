@@ -19,6 +19,5 @@ class help(commands.Cog):
         await ctx.author.send(embed=embed)
         await ctx.author.send(embed=embed2)
 
-
 def setup(bot):
     bot.add_cog(help(bot))

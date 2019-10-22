@@ -25,6 +25,5 @@ class time(commands.Cog):
         embed = discord.Embed(title="⏰", description=timezone.strftime("%H:%M"), color=discord.Color.green())
         await ctx.send(embed=embed)
 
-
 def setup(bot):
     bot.add_cog(time(bot))
